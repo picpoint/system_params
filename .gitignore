@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/node_modules
+/vendor
+__pycache__
+.venv
+.idea
+npm-debug.log
+yarn-error.log
+debug.log
