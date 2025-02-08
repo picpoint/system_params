@@ -31,10 +31,11 @@ print(f"Используемая память подкачки - {swap_used}Гб
 swap_free = str(swap.free / 1024 / 1024 / 1024)[:3]
 print(f"Свободная память подкачки - {swap_free}Гб")
 
-
+print()
 
 disk_partitions = psutil.disk_partitions(all=False)
 print("Устройства в системе:")
+print("--------------------")
 
 for dev in disk_partitions:
     print(f"Диск {dev[0]} - {dev[2]}")
@@ -61,13 +62,16 @@ for net_device in net_addr:
     print()
 
 
-
+print()
+print("Процессы:")
+print("--------------------")
 process = psutil.process_iter()
 
 for i in process:
     print(f"PID: {i.pid}, Name: {i.name()}, Status: {i.status()}")
 
-
+print()
+print("--------------------")
 battery = psutil.sensors_battery()
 
 if str(battery) == "None":
