@@ -1,60 +1,44 @@
-import psutil
 from cpu import cpu_params
+from memory import memory_params
+from hd import hd_params
+from netaddr import netaddr_params
+from processes import prosecces_list
+from battery import battery_params
+
+
+print("------Выберите пункт меню------")
+print("[1] Параметры процессора")
+print("[2] Параметры ОЗУ")
+print("[3] Параметры жёсткого диска")
+print("[4] Параметры сетевой карты")
+print("[5] Параметры процессов")
+print("[6] Параметры заряда батареи")
+print("-------------------------------")
 
 command = input("Введите команду: ")
 
 def main(command):
     if command == "1":
         cpu_params()
+    elif command == "2":
+        memory_params()
+    elif command == "3":
+        hd_params()
+    elif command == "4":
+        netaddr_params()
+    elif command == "5":
+        prosecces_list()
+    elif command == "6":
+        battery_params()
+    else:
+        print("Введена неправильная команда... :-(")
+
+
+
 
 if __name__ == '__main__':
     main(command)
 
 
 
-#
-# disk_partitions = psutil.disk_partitions(all=False)
-# print("Устройства в системе:")
-# print("--------------------")
-#
-# for dev in disk_partitions:
-#     print(f"Диск {dev[0]} - {dev[2]}")
-#     try:
-#         disk_volume = psutil.disk_usage(f"{dev[0]}")
-#         print(f"Полный объём диска {dev[0]} - { str(disk_volume[0] / 1024 / 1024 / 1024)[:5]}Гб")
-#         print(f"Занято {dev[1]} - {str(disk_volume[1] / 1024 / 1024 / 1024)[:5]}Гб")
-#         print(f"Свободно {dev[2]} - {str(disk_volume[2] / 1024 / 1024 / 1024)[:5]}Гб")
-#     except BaseException as err:
-#         print(f"Не возможно определить объём диска {dev[0]}")
-#     print()
-#
-#
-#
-# net_addr = psutil.net_if_addrs()
-# print("Сетевые устройства:")
-# print("--------------------")
-#
-# for net_device in net_addr:
-#     print(f"Название сетевой карты: {net_device}")
-#     print(f"MAC-address: {net_addr[net_device][0][1]}")
-#     print(f"IP-address: {net_addr[net_device][1][1]}")
-#     print(f"NET-mask: {net_addr[net_device][1][2]}")
-#     print()
-#
-#
-# print()
-# print("Процессы:")
-# print("--------------------")
-# process = psutil.process_iter()
-#
-# for i in process:
-#     print(f"PID: {i.pid}, Name: {i.name()}, Status: {i.status()}")
-#
-# print()
-# print("--------------------")
-# battery = psutil.sensors_battery()
-#
-# if str(battery) == "None":
-#     print("Заряд батареи не определён ... :-(")
-# else:
-#     print(f"Заряд батареи {int(battery.percent)}%")
+
