@@ -1,7 +1,10 @@
+import sys
 import psutil
+import os
+
 
 def battery_params():
-    print()
+    os.system('cls')
     print("------------Батарея------------")
     battery = psutil.sensors_battery()
     if str(battery) == "None":
@@ -9,3 +12,12 @@ def battery_params():
     else:
         print(f"Заряд батареи {int(battery.percent)}%")
     print("-------------------------------")
+
+    print("Вернуться в главное меню - q")
+    print("Завершить программу - любая другая клавиша")
+    print()
+    key = input("Введите команду: ")
+    if key == "q":
+        os.system('cls')
+    elif key != "q":
+        sys.exit()

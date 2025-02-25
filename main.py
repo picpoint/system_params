@@ -32,11 +32,16 @@ def main(command):
         battery_params()
     else:
         print("Введена неправильная команда... :-(")
+        input("Для завершения программы нажмите любую клавишу...")
 
 
-
-if __name__ == '__main__':
+while True:
     main(command)
+
+
+
+# if __name__ == '__main__':
+#     main(command)
 
 
 

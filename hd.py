@@ -1,7 +1,10 @@
+import sys
 import psutil
+import os
+
 
 def hd_params():
-    print()
+    os.system('cls')
     print("--------Параметры диска--------")
     disk_partitions = psutil.disk_partitions(all=False)
     for dev in disk_partitions:
@@ -15,3 +18,12 @@ def hd_params():
             print(f"Не возможно определить объём диска {dev[0]}")
         print()
     print("-------------------------------")
+
+    print("Вернуться в главное меню - q")
+    print("Завершить программу - любая другая клавиша")
+    print()
+    key = input("Введите команду: ")
+    if key == "q":
+        os.system('cls')
+    elif key != "q":
+        sys.exit()

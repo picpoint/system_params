@@ -1,7 +1,10 @@
+import sys
 import psutil
+import os
+
 
 def memory_params():
-    print()
+    os.system('cls')
     print("----------Параметры ОЗУ---------")
     memory = psutil.virtual_memory()
     total_memory = memory.total / 1000000000
@@ -24,3 +27,12 @@ def memory_params():
     swap_free = str(swap.free / 1024 / 1024 / 1024)[:3]
     print(f"Свободная память подкачки - {swap_free}Гб")
     print("-------------------------------")
+
+    print("Вернуться в главное меню - q")
+    print("Завершить программу - любая другая клавиша")
+    print()
+    key = input("Введите команду: ")
+    if key == "q":
+        os.system('cls')
+    elif key != "q":
+        sys.exit()

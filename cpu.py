@@ -1,10 +1,10 @@
+import sys
 import psutil
 import os
 
 
 def cpu_params():
     os.system('cls')
-    print()
     print("------Параметры процессора------")
     cpu_load = psutil.cpu_percent(interval=1, percpu=True)
     print(f"Количество ядер - {len(cpu_load)}")
@@ -18,13 +18,10 @@ def cpu_params():
 
     print("Вернуться в главное меню - q")
     print("Завершить программу - любая другая клавиша")
+    print()
     key = input("Введите команду: ")
-    if key == 'q':
+    if key == "q":
         os.system('cls')
-        main()
-    else:
-        return
+    elif key != "q":
+        sys.exit()
 
-
-
-from main import main
