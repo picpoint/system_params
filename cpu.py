@@ -22,6 +22,8 @@ def cpu_params():
     key = input("Введите команду: ")
     if key == "q":
         os.system('cls')
+        from main import main
+        main()
     elif key != "q":
         sys.exit()
 

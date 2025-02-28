@@ -6,18 +6,17 @@ from processes import prosecces_list
 from battery import battery_params
 
 
-print("------Выберите пункт меню------")
-print("[1] Параметры процессора")
-print("[2] Параметры ОЗУ")
-print("[3] Параметры жёсткого диска")
-print("[4] Параметры сетевой карты")
-print("[5] Параметры процессов")
-print("[6] Параметры заряда батареи")
-print("-------------------------------")
+def main():
+    print("------Выберите пункт меню------")
+    print("[1] Параметры процессора")
+    print("[2] Параметры ОЗУ")
+    print("[3] Параметры жёсткого диска")
+    print("[4] Параметры сетевой карты")
+    print("[5] Параметры процессов")
+    print("[6] Параметры заряда батареи")
+    print("-------------------------------")
 
-command = input("Введите команду: ")
-
-def main(command):
+    command = input("Введите команду: ")
     if command == "1":
         cpu_params()
     elif command == "2":
@@ -35,13 +34,9 @@ def main(command):
         input("Для завершения программы нажмите любую клавишу...")
 
 
-while True:
-    main(command)
 
-
-
-# if __name__ == '__main__':
-#     main(command)
+if __name__ == '__main__':
+    main()
 
 
 
